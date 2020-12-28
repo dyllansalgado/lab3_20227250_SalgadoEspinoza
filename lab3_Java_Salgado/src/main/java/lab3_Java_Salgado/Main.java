@@ -4,19 +4,23 @@
  * and open the template in the editor.
  */
 package lab3_Java_Salgado;
-
+import java.util.Scanner;
 /**
  *
  * @author dyllan
  */
 public class Main {
-
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
         System.out.println("mi primer print");
+        Scanner registroNameUser = new Scanner(System.in);
+        System.out.print("Ingrese el nombre de usuario: ");
+        String registroUserName = registroNameUser.nextLine();
+        Scanner registroPassUser = new Scanner(System.in);
+        System.out.print("Ingrese clave de usuario: ");
+        String registroUserPass = registroPassUser.nextLine();
     }
-    
 }
