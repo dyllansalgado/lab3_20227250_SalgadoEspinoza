@@ -13,7 +13,8 @@ public class Menu {
 		String nameUser = entradaEscaner.nextLine();
 		System.out.println("Ingrese contraseña de usuario");
 		String passUser = entradaEscaner.nextLine();
-		int x = -1;//La entrada la incicializamos en -1
+		//Se inicializa con -1
+		int x = -1;
 		while(x != 8){
     	try{
     	  entradaEscaner = new Scanner (System.in);
@@ -61,7 +62,7 @@ public class Menu {
             }
         }
       }catch (Exception s){
-      System.out.println("Algo saliÃ³ mal" + s);
+      System.out.println("Algo salio mal" + s);
 	  }
     }
     entradaEscaner.close();	
