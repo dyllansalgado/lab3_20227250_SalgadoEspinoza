@@ -11,9 +11,9 @@ public class Menu {
 		Scanner entradaEscaner = new Scanner(System.in);
 		System.out.println("Ingrese nombre de usuario");
 		String nameUser = entradaEscaner.nextLine();
-		System.out.println("Ingrese contraseña de usuario");
+		System.out.println("Ingrese pass de usuario");
 		String passUser = entradaEscaner.nextLine();
-		//Se inicializa con -1
+		stack myStack = new stack(nameUser, passUser);
 		int x = -1;
 		while(x != 8){
     	try{

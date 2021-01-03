@@ -4,10 +4,11 @@ public class usuario {
 	String nombreUsuario;
 	String claveUsuario;
 	int reputacionUsuario;
-	public usuario(String nombreUsuario, String claveUsuario, int reputacionUsuario) {
-        this.nombreUsuario = nombreUsuario;
-        this.claveUsuario = claveUsuario;
-        this.reputacionUsuario = reputacionUsuario;
+	public usuario(String nombreUsuario, String claveUsuario) {
+        setClaveUsuario(claveUsuario);
+        setNombreUsuario(nombreUsuario);
+        setReputacionUsuario(0);
+        
     }
 	//Selectores
 	public String getNombreUsuario() {
@@ -36,3 +37,4 @@ public class usuario {
 	}
     
 }
+
