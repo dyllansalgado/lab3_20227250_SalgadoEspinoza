@@ -18,21 +18,28 @@ public class Menu {
 		while(x != 8){
     	try{
     	  entradaEscaner = new Scanner (System.in);
-    	  System.out.println("### Simulacion de StackOverflow ###\n"
-          + "\nEscoja una opcion:\n"
+    	  System.out.println("### SISTEMA DE PREGUNTAS Y RESPUESTAS ###\n ");
+    	  myStack.mostrarUsuario();
+    	  System.out.println( "\nEscoja una opcion:\n"
           + "1.  Registrar Usuario\n"
-          + "2.  Iniciar Sesion\n"
-          + "3.  Realizar pregunta\n"
-          + "4.  Realizar respuesta\n"
-          + "5.  Ofrecer recompensa por mi pregunta\n"
-          + "6.  Aceptar respuestas a mi pregunta\n"
-          + "7.  Cerrar sesion\n"
-          + "8.  Cerrar aplicacion\n"
+          + "2.  Realizar pregunta\n"
+          + "3.  Realizar respuesta\n"
+          + "4.  Ofrecer recompensa por mi pregunta\n"
+          + "5.  Aceptar respuestas a mi pregunta\n"
+          + "6.  Cerrar sesion\n"
+          + "7.  Cerrar aplicacion\n"
+          + "8.  Mostrar usuarios \n"
           +"Su opcion es:"
           + " _\n");
           x = entradaEscaner.nextInt();
           switch(x){
           	case 1:{
+          		try {
+          			myStack.registrarUsuario();
+				} catch (Exception e) {
+					System.out.println(e);
+				}
+          		x = -1;
           		break;
           	}
           	case 2:{

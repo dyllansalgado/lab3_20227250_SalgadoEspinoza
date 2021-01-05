@@ -1,6 +1,7 @@
 package modelo;
+
 /**
- * 
+ * Clase de lista de usuarios	
  * @author dyllan
  *
  */
@@ -53,7 +54,7 @@ public class ListaDeUsuarios {
 		setTamano(tamano +1);		
 	}
 	/**
-	 * agregar un usuario a la lista de usuario
+	 * Añadir un usuario a la lista de usuario
 	 * @param myArchivo archivo que se quiere agregar a la lista
 	 */
 	public void agregarUsuario(usuario miUsuario) {
@@ -64,7 +65,28 @@ public class ListaDeUsuarios {
 		}
 	}	
 	
-	//Esta vacia la lista de archivos
+	/**
+	 * Metodo que consulta si un archivo se encuentra dentro de otra lista de archivos
+	 * @param archivo que se va a comparar con el resto de los archivos, se compara solo el nombre
+	 * @return Boolean true si se encuentra dentro, false si no se encuentra
+	 */
+	public Boolean isInside(usuario myUsuario) {
+		nodoUsuario puntero = getCabeza();
+		while (puntero != null) {
+			//Comparamos solo con el nombre
+			//System.out.println("Name archivo : " + archivo.getNombre());
+			//System.out.println("Name puntero : " + puntero.myArchivo.getNombre()+ "\n");
+			if (myUsuario.getNombreUsuario().equals(puntero.myUsuario.getNombreUsuario())) {
+				//System.out.println("El archivo ya se encuentra en la lista de archivos\n");
+				return true;
+			}else {
+				puntero = puntero.getSiguiente();	
+			}	
+		}
+		return false;
+	}
+	
+	//Esta la lista vacia de archivos
 	public Boolean isEmpty() {return tamano == 0;}
 	//Setters and Getters
 	public int getTamano() {return tamano;}
