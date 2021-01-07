@@ -11,15 +11,15 @@ public class Menu {
 		Scanner entradaEscaner = new Scanner(System.in);
 		System.out.println("Ingrese nombre de usuario");
 		String nameUser = entradaEscaner.nextLine();
-		System.out.println("Ingrese pass de usuario");
+		System.out.println("Ingrese contraseña de usuario");
 		String passUser = entradaEscaner.nextLine();
 		stack myStack = new stack(nameUser, passUser);
 		int x = -1;
-		while(x != 8){
+		while(x == -1){
     	try{
     	  entradaEscaner = new Scanner (System.in);
     	  System.out.println("### SISTEMA DE PREGUNTAS Y RESPUESTAS ###\n ");
-    	  myStack.mostrarUsuario();
+    	  myStack.mostrarUsuarioActual();
     	  System.out.println( "\nEscoja una opcion:\n"
           + "1.  Registrar Usuario\n"
           + "2.  Realizar pregunta\n"
@@ -29,6 +29,7 @@ public class Menu {
           + "6.  Cerrar sesion\n"
           + "7.  Cerrar aplicacion\n"
           + "8.  Mostrar usuarios \n"
+          + "9.  Mostrar preguntas \n"
           +"Su opcion es:"
           + " _\n");
           x = entradaEscaner.nextInt();
@@ -43,24 +44,42 @@ public class Menu {
           		break;
           	}
           	case 2:{
+          		try {
+          			myStack.realizarPregunta();
+				} catch (Exception e) {
+					System.out.println(e);
+				}
+          		x = -1;
           		break;
           	}
           	case 3:{
+          		x = -1;
           		break;
           	}
           	case 4:{   
+          		x = -1;
           		break;
           	}
           	case 5:{
+          		x = -1;
           		break;
           	}
           	case 6:{
+          		x = -1;
           		break;
           	}
           	case 7:{
+          		x = -1;
           		break;
           	}
           	case 8:{
+          		myStack.mostrarUsuarios();
+          		x = -1;
+          		break; 
+		    }
+        	case 9:{
+          		myStack.mostrarPreguntas();
+          		x = -1;
           		break; 
 		    }
           	default :{

@@ -10,38 +10,28 @@ public class pregunta {
 	String respuesta;
 	int estado;
 	int recompensa;
-	public pregunta(String tituloPregunta,String contenidoPregunta) {
+	public pregunta(String tituloPregunta,String contenidoPregunta,String autor,String etiqueta,int id) {
 		setTituloPregunta(tituloPregunta);
 		setContenidoPregunta(contenidoPregunta);
-		setFechaPublicacion();
-		
+		setAutorPregunta(autor);
+		setFechaPublicacion(tiempo.getActualTime());
+		setIdPregunta(id);
 	}
-	public String getTituloPregunta() {
-		return tituloPregunta;
-	}
-	public void setTituloPregunta(String tituloPregunta) {
-		this.tituloPregunta = tituloPregunta;
-	}
-	public String getContenidoPregunta() {
-		return contenidoPregunta;
-	}
-	public void setContenidoPregunta(String contenidoPregunta) {
-		this.contenidoPregunta = contenidoPregunta;
-	}
-	public String getFechaPublicacion() {
-		return fechaPublicacion;
-	}
-	public void setFechaPublicacion(String fechaPublicacion) {
-		this.fechaPublicacion = fechaPublicacion;
-	}
-	public void setFechaPublicacion() {
-		this.fechaPublicacion = tiempo.getActualTime();
-	}
-	public String getAutorPregunta() {
-		return autorPregunta;
-	}
-	public void setAutorPregunta(String autorPregunta) {
-		this.autorPregunta = autorPregunta;
+	public int getIdPregunta() {return idPregunta;}
+	public void setIdPregunta(int idPregunta) {this.idPregunta = idPregunta;}
+	public String pregunta2String() {
+		String salidaString;
+		salidaString = "Titulo : " + getTituloPregunta() + "\n Contenido : "+ getContenidoPregunta();
+		return salidaString;
 	}
 	
+	public String getTituloPregunta() {return tituloPregunta;}
+	public void setTituloPregunta(String tituloPregunta) {this.tituloPregunta = tituloPregunta;}
+	public String getContenidoPregunta() {return contenidoPregunta;}
+	public void setContenidoPregunta(String contenidoPregunta) {this.contenidoPregunta = contenidoPregunta;}
+	public String getFechaPublicacion() {return fechaPublicacion;}
+	public void setFechaPublicacion(String fechaPublicacion) {this.fechaPublicacion = fechaPublicacion;}
+	public void setFechaPublicacion() {this.fechaPublicacion = tiempo.getActualTime();}
+	public String getAutorPregunta() {return autorPregunta;}
+	public void setAutorPregunta(String autorPregunta) {this.autorPregunta = autorPregunta;}
 }

@@ -17,11 +17,10 @@ public class ListaDeUsuarios {
 		private usuario myUsuario;
 		private nodoUsuario siguiente = null;
 		//Constructor
-		public nodoUsuario(usuario myUsuario) {this.setMyUsuario(myUsuario);}
+		public nodoUsuario(usuario myUsuario) {this.myUsuario = myUsuario;}
 		public nodoUsuario getSiguiente() {return siguiente;}
 		public void setSiguiente(nodoUsuario siguienteUsuario) {this.siguiente= siguienteUsuario;}
 		//public usuario getMyUsuario() {return myUsuario;}
-		public void setMyUsuario(usuario myUsuario) {this.myUsuario = myUsuario;}
 	}
 	
 	public ListaDeUsuarios() {}
@@ -54,7 +53,7 @@ public class ListaDeUsuarios {
 		setTamano(tamano +1);		
 	}
 	/**
-	 * Añadir un usuario a la lista de usuario
+	 * Agregar un usuario a la lista de usuario
 	 * @param myArchivo archivo que se quiere agregar a la lista
 	 */
 	public void agregarUsuario(usuario miUsuario) {
@@ -66,7 +65,7 @@ public class ListaDeUsuarios {
 	}	
 	
 	/**
-	 * Metodo que consulta si un archivo se encuentra dentro de otra lista de archivos
+	 * Metodo que consulta si un archivos se encuentra dentro de otra lista de archivos
 	 * @param archivo que se va a comparar con el resto de los archivos, se compara solo el nombre
 	 * @return Boolean true si se encuentra dentro, false si no se encuentra
 	 */
@@ -86,7 +85,28 @@ public class ListaDeUsuarios {
 		return false;
 	}
 	
-	//Esta la lista vacia de archivos
+	/**
+	 * Devolver todos los archivos y su contenido en un string
+	 * @return
+	 */
+	public String usuarios2String() {
+		if (!isEmpty()) {
+			nodoUsuario puntero =  getCabeza();
+			String salidaString = "Usuarios registrados : \n";
+			int i = 0 ;
+			while (puntero != null) {
+				salidaString = salidaString +"i :"+ i + ".-\n";
+				salidaString = salidaString + puntero.myUsuario.getNombreUsuario();
+				puntero = puntero.getSiguiente();
+				i++;
+			}
+			return (salidaString +"\n");
+		}else {
+			return("Lista de archivos vacia\n");
+		}
+	}
+	
+	//Esta vacia la lista de archivos
 	public Boolean isEmpty() {return tamano == 0;}
 	//Setters and Getters
 	public int getTamano() {return tamano;}
