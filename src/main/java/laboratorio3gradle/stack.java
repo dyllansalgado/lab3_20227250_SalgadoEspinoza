@@ -9,8 +9,6 @@ package laboratorio3gradle;
  *
  * @author dyllan
  */
-import laboratorio3gradle.ListaDeUsuarios;
-import laboratorio3gradle.ListaDePreguntas;
 import java.util.Scanner;
 public class stack {
 	//Atributos

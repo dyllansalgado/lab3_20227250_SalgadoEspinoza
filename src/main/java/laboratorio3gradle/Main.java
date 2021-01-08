@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package laboratorio3gradle;
-import laboratorio3gradle.stack;
 import java.util.Scanner;
 
 public class Main {
