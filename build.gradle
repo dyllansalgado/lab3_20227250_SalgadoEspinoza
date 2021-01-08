@@ -3,7 +3,7 @@ apply plugin: 'jacoco'
 apply plugin: 'application'
 
 
-mainClassName = 'laboratorio3.Main'
+mainClassName = 'laboratorio3gradle.Main'
 
 repositories {
     jcenter()
