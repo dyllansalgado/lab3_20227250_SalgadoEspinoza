@@ -1,4 +1,4 @@
-package modelo;
+package lab3_java_20227250;
 
 public class usuario {
 	String nombreUsuario;
@@ -37,4 +37,3 @@ public class usuario {
 	}
     
 }
-

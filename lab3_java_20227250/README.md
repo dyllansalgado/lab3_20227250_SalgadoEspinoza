@@ -4,3 +4,5 @@
 01-12-2020 no podre avanzar hoy
 03-01-2021 avanzando
 05-01-2021 avanzando
+06-01-2021 cambiando cosas
+08-01-2021 me di cuenta que no lo tenia con gradleeeee

@@ -1,4 +1,5 @@
-package modelo;
+package lab3_java_20227250;
+
 import java.text.SimpleDateFormat;
 import java.util.Date; 
 /*

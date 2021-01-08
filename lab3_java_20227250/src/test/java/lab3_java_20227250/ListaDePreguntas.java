@@ -1,4 +1,4 @@
-package modelo;
+package lab3_java_20227250;
 
 public class ListaDePreguntas {
 	nodoPregunta cabeza;
@@ -98,7 +98,7 @@ public class ListaDePreguntas {
 			return("No existen preguntas en el stack\n");
 		}
 	}
-	//Esta vacía la lista de archivos
+	//Esta vacia la lista de archivos
 	public Boolean isEmpty() {return tamano == 0;}
 	//Setters and getters
 	public nodoPregunta getCabeza() {return cabeza;}

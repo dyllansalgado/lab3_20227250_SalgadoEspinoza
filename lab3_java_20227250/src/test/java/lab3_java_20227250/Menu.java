@@ -1,4 +1,4 @@
-package modelo;
+package lab3_java_20227250;
 
 import java.util.Scanner;
 
