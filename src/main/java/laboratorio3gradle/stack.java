@@ -10,19 +10,22 @@ package laboratorio3gradle;
  * @author dyllan
  */
 import java.util.Scanner;
+
 public class stack {
 	//Atributos
-	usuario ActivoUsuario; //Usuario actual
-	ListaDeUsuarios usuarios;//Usuarios totales	
-	ListaDePreguntas preguntas;//Lista de preguntas
+	public usuario ActivoUsuario; //Usuario actual
+	public ListaDeUsuarios usuarios;//Usuarios totales	
+	public ListaDePreguntas preguntas;//Lista de preguntas
+	public ListaDeEtiquetas etiquetas;//Lista de etiquetas
 	
 	//Metodos
 	//Constructor de usuario
-	public stack(String userName,String password) {
+	public stack(String userName,String password,int reputacion) {
 		// TODO Auto-generated constructor stub
-		ActivoUsuario = new usuario(userName, password);
+		ActivoUsuario = new usuario(userName, password,reputacion);
 		preguntas = new ListaDePreguntas();
 		usuarios = new ListaDeUsuarios();
+		etiquetas = new ListaDeEtiquetas();
 		usuarios.agregarUsuario(ActivoUsuario);		
 		
 	}
@@ -36,7 +39,7 @@ public class stack {
 				usuario myUsuario= new usuario(nameUser, "") ; 
 				//Preguntamos si el usuario ya se encuentra en la lista de usuarios
 				if(usuarios.isInside(myUsuario) == false) {
-					System.out.println("Ingrese clave de usuario");
+					System.out.println("Ingrese contrasena de usuario");
 					String passUser = entradaEscaner.nextLine();
 					myUsuario= new usuario(nameUser, passUser); 
 					usuarios.agregarUsuario(myUsuario);
@@ -50,18 +53,45 @@ public class stack {
 				}
 			}
 	}
+	public void registrarUsuario(String nameUser,String password, int reputacion) {
+		usuario myUsuario= new usuario(nameUser, password,reputacion); 
+		usuarios.agregarUsuario(myUsuario);
+		usuarios.agregarUsuario(myUsuario);
+	}
 	public void realizarPregunta() {
 		@SuppressWarnings("resource")
 		Scanner entradaEscaner = new Scanner(System.in);
 		System.out.println("Ingrese el titulo de la pregunta");
 		String titulo = entradaEscaner.nextLine();
-		System.out.println("Ingrese el contenido de la pregutna");
+		System.out.println("Ingrese el contenido de la pregunta");
 		String contenido = entradaEscaner.nextLine();
-		System.out.println("Ingrese sus etiquetas");
-		String etiquetas = entradaEscaner.nextLine();
-		pregunta miPregunta = new pregunta(titulo, contenido, ActivoUsuario.getNombreUsuario(), etiquetas, preguntas.getTamano()+1);
+		System.out.println(etiquetas.etiquetas2String1());
+		System.out.println("Indique la etiqueta que quiere agregar");
+		int x = entradaEscaner.nextInt();
+		etiqueta miEtiqueta ;
+		if (etiquetas.getEtiquetaN(x)!= null) {
+			miEtiqueta =  etiquetas.getEtiquetaN(x);
+		}else {
+			miEtiqueta = new etiqueta("NULL","NULL");
+		}
+		pregunta miPregunta = new pregunta(titulo, contenido, ActivoUsuario.getNombreUsuario(),miEtiqueta, preguntas.getTamano()+1);
+		System.out.println("Desea asignar recompensa? S/N" );
+		String respuesta = entradaEscaner.nextLine();
+		if (respuesta.equals("S")||respuesta.equals("s")) {
+			System.out.println("Ingrese recompensa a asignar" );
+			int recompensa = entradaEscaner.nextInt();
+			miPregunta.setRecompensa(recompensa);
+		}
 		preguntas.agregarPreguntas(miPregunta);
 		System.out.println("Pregunta agregada");
+	}
+	public void realizarPregunta(String titulo,String contenido, String autor,etiqueta miEtiqueta, int reputacion) {
+		pregunta myPregunta = new pregunta(titulo, contenido, autor,miEtiqueta, reputacion);
+		preguntas.agregarPreguntas(myPregunta);
+	}
+	public void agregarEtiqueta(String nombre,String descripcion) {
+		etiqueta myEtiqueta = new etiqueta(nombre,descripcion);
+		etiquetas.agregarEtiquetas(myEtiqueta);
 	}
 	
 	/**

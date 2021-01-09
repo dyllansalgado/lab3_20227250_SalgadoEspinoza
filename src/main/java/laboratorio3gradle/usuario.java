@@ -13,36 +13,23 @@ public class usuario {
 	String nombreUsuario;
 	String claveUsuario;
 	int reputacionUsuario;
+	//Constructor
 	public usuario(String nombreUsuario, String claveUsuario) {
         setClaveUsuario(claveUsuario);
         setNombreUsuario(nombreUsuario);
-        setReputacionUsuario(0);
-        
+        setReputacionUsuario(0);   
+    }
+	public usuario(String nombreUsuario, String claveUsuario,int reputacion) {
+        setClaveUsuario(claveUsuario);
+        setNombreUsuario(nombreUsuario);
+        setReputacionUsuario(reputacion);   
     }
 	//Selectores
-	public String getNombreUsuario() {
-		return nombreUsuario;
-	}
-	
-	public String getClaveUsuario() {
-		return claveUsuario;
-	}
-	
-	public int getReputacionUsuario() {
-		return reputacionUsuario;
-	}
-	
+	public String getNombreUsuario() {return nombreUsuario;}	
+	public String getClaveUsuario() {return claveUsuario;}	
+	public int getReputacionUsuario() {return reputacionUsuario;}	
 	//modificadores
-	public void setNombreUsuario(String nombreUsuario) {
-		this.nombreUsuario = nombreUsuario;
-	}
-
-	public void setClaveUsuario(String claveUsuario) {
-		this.claveUsuario = claveUsuario;
-	}
-
-	public void setReputacionUsuario(int reputacionUsuario) {
-		this.reputacionUsuario = reputacionUsuario;
-	}
-    
+	public void setNombreUsuario(String nombreUsuario) {this.nombreUsuario = nombreUsuario;}
+	public void setClaveUsuario(String claveUsuario) {this.claveUsuario = claveUsuario;}
+	public void setReputacionUsuario(int reputacionUsuario) {this.reputacionUsuario = reputacionUsuario;}
 }

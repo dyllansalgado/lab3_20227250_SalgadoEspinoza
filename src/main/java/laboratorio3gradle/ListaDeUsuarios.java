@@ -6,8 +6,9 @@
 package laboratorio3gradle;
 
 /**
- *
+ * Clase de lista de usuarios	
  * @author dyllan
+ *
  */
 public class ListaDeUsuarios {
 	private nodoUsuario cabeza = null;
@@ -31,7 +32,7 @@ public class ListaDeUsuarios {
 	//Metodos
 	/**
 	 * Insertar la inicio de la lista
-	 * @param myArchivo  archivo que se quiere agregar a la lista
+	 * @param myArchivo archivo que se quiere agregar a la lista
 	 */
 	public void insertarPrincipio(usuario miUsuario){
 		nodoUsuario nodo = new nodoUsuario(miUsuario) ;
@@ -57,7 +58,7 @@ public class ListaDeUsuarios {
 		setTamano(tamano +1);		
 	}
 	/**
-	 * Agregar un usuario a la lista de usuario
+	 * agregar un usuario a la lista de usuario
 	 * @param myArchivo archivo que se quiere agregar a la lista
 	 */
 	public void agregarUsuario(usuario miUsuario) {

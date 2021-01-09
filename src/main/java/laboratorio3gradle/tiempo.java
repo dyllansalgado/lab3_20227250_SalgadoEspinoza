@@ -22,7 +22,7 @@ public class tiempo {
 	
 	/**
 	 * Obtener el tiempo actual
-	 * @return un string con el tiempo actualmente
+	 * @return uns tring con el tiempo actualmente
 	 */
 	public static String getActualTime() {
 		tiempo.setActualTime() ;
@@ -30,7 +30,7 @@ public class tiempo {
 	}
 	
 	/**
-	 * Actualizar el tiempo a actual
+	 * Actualizar el tiempoa actual
 	 */
 	public static void setActualTime() {
 		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");

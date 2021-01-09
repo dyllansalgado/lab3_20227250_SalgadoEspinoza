@@ -55,7 +55,7 @@ public class ListaDePreguntas {
 		setTamano(tamano +1);		
 	}
 	/**
-	 * agregar un usuario a la lista de usuario
+	 * Añadir un usuario a la lista de usuario
 	 * @param myArchivo archivo que se quiere agregar a la lista
 	 */
 	public void agregarPreguntas(pregunta miPregunta) {
@@ -97,7 +97,7 @@ public class ListaDePreguntas {
 			String salidaString = "Preguntas realizadas : \n";
 			int i = 0 ;
 			while (puntero != null) {
-				salidaString = salidaString +"i :"+ i + ".-\n";
+				salidaString = salidaString +"\n"+ i + ".-\n";
 				salidaString = salidaString + puntero.myPregunta.pregunta2String();
 				puntero = puntero.getSiguiente();
 				i++;
