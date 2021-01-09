@@ -9,7 +9,7 @@ package laboratorio3gradle;
  *
  * @author dyllan
  */
-public class pregunta {
+public final class pregunta {
 	int idPregunta;
 	String tituloPregunta;
 	String contenidoPregunta;
@@ -54,6 +54,9 @@ public class pregunta {
 				respuestas.respuestas2String() +
 				etiquetas.etiquetas2String1();
 		return salidaString;
+	}
+	public void answer(respuesta miRespuesta) {
+		respuestas.agregarRespuesta(miRespuesta);
 	}
 	public int getIdPregunta() {return idPregunta;}
 	public void setIdPregunta(int idPregunta) {this.idPregunta = idPregunta;}

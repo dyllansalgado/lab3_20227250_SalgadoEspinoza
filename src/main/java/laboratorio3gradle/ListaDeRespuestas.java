@@ -54,19 +54,16 @@ public class ListaDeRespuestas {
 		setTamano(tamano +1);		
 	}
 	/**
-	 * Agregar un usuario a la lista de usuario
+	 * Agrega un usuario a la lista de usuario
 	 * @param myArchivo archivo que se quiere agregar a la lista
 	 */
-	public void agregarUsuario(respuesta miRespuesta) {
+	public void agregarRespuesta(respuesta miRespuesta) {
 		if (isEmpty()) {
 			insertarPrincipio(miRespuesta);
 		}else {
 			insertarFinal(miRespuesta);
 		}
 	}	
-	
-
-	
 	/**
 	 * Devolver todos los archivos y su contenido en un string
 	 * @return

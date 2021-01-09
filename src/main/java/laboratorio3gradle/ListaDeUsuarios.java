@@ -19,7 +19,7 @@ public class ListaDeUsuarios {
 	 *
 	 */
 	private class nodoUsuario {
-		private usuario myUsuario;
+		private final usuario myUsuario;
 		private nodoUsuario siguiente = null;
 		//Constructor
 		public nodoUsuario(usuario myUsuario) {this.myUsuario = myUsuario;}
@@ -32,7 +32,7 @@ public class ListaDeUsuarios {
 	//Metodos
 	/**
 	 * Insertar la inicio de la lista
-	 * @param myArchivo archivo que se quiere agregar a la lista
+         * @param miUsuario
 	 */
 	public void insertarPrincipio(usuario miUsuario){
 		nodoUsuario nodo = new nodoUsuario(miUsuario) ;
@@ -44,7 +44,7 @@ public class ListaDeUsuarios {
 	}
 	/**
 	 * Insertar un archivo al final de la lista
-	 * @param myArchivo  archivo que se quiere agregar a la lista
+     * @param miUsuario
 	 */
 	//Insertar al final
 	public void insertarFinal(usuario miUsuario) {
@@ -58,8 +58,8 @@ public class ListaDeUsuarios {
 		setTamano(tamano +1);		
 	}
 	/**
-	 * agregar un usuario a la lista de usuario
-	 * @param myArchivo archivo que se quiere agregar a la lista
+	 * Agrega un usuario a la lista de usuario
+     * @param miUsuario
 	 */
 	public void agregarUsuario(usuario miUsuario) {
 		if (isEmpty()) {
@@ -71,7 +71,7 @@ public class ListaDeUsuarios {
 	
 	/**
 	 * Metodo que consulta si un archivos se encuentra dentro de otra lista de archivos
-	 * @param archivo que se va a comparar con el resto de los archivos, se compara solo el nombre
+     * @param myUsuario
 	 * @return Boolean true si se encuentra dentro, false si no se encuentra
 	 */
 	public Boolean isInside(usuario myUsuario) {
@@ -90,6 +90,21 @@ public class ListaDeUsuarios {
 		return false;
 	}
 	
+	public Boolean correctPass(usuario myUsuario) {
+		nodoUsuario puntero = getCabeza();
+		while (puntero != null) {
+			//Comparamos solo con el nombre
+			//System.out.println("Name archivo : " + archivo.getNombre());
+			//System.out.println("Name puntero : " + puntero.myArchivo.getNombre()+ "\n");
+			if (myUsuario.getNombreUsuario().equals(puntero.myUsuario.getNombreUsuario())) {
+				return myUsuario.getClaveUsuario().equals(puntero.myUsuario.getClaveUsuario());
+			}else {
+				puntero = puntero.getSiguiente();	
+			}	
+		}
+		return false;
+	}
+	
 	/**
 	 * Devolver todos los archivos y su contenido en un string
 	 * @return
@@ -97,10 +112,10 @@ public class ListaDeUsuarios {
 	public String usuarios2String() {
 		if (!isEmpty()) {
 			nodoUsuario puntero =  getCabeza();
-			String salidaString = "Usuarios registrados : \n";
+			String salidaString = "Usuarios registrados : ";
 			int i = 0 ;
 			while (puntero != null) {
-				salidaString = salidaString +"i :"+ i + ".-\n";
+				salidaString = salidaString +"\n"+ i + ".-";
 				salidaString = salidaString + puntero.myUsuario.getNombreUsuario();
 				puntero = puntero.getSiguiente();
 				i++;

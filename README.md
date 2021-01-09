@@ -7,3 +7,4 @@
 06-01-2021 cambiando cosas
 08-01-2021 me di cuenta que no lo tenia con gradleeeee cambie de ide por errores
 08-01-2021 subiendo avances, debo cambiar cosas igual, tratare de avanzar lo mas posible hoy y mañana hard en el lab.
+09-01-2021 subiendo mas avances, tengo unos errores en asignar recompensa y en realizar la respuesta.

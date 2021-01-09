@@ -55,7 +55,7 @@ public class ListaDeEtiquetas {
 		setTamano(tamano +1);		
 	}
 	/**
-	 * Añadir un usuario a la lista de usuario
+	 * Agregar un usuario a la lista de usuario
 	 * @param myArchivo archivo que se quiere agregar a la lista
 	 */
 	public void agregarEtiquetas(etiqueta miEtiqueta) {
@@ -78,6 +78,21 @@ public class ListaDeEtiquetas {
 			//System.out.println("Name archivo : " + archivo.getNombre());
 			//System.out.println("Name puntero : " + puntero.myArchivo.getNombre()+ "\n");
 			if (myEtiqueta.getEtiqueta().equals(puntero.getMyEtiqueta().getEtiqueta())) {
+				//System.out.println("El archivo ya se encuentra en la lista de archivos\n");
+				return true;
+			}else {
+				puntero = puntero.getSiguiente();	
+			}	
+		}
+		return false;
+	}
+	public Boolean isInside(String etiqueta) {
+		nodoEtiqueta puntero = getCabeza();
+		while (puntero != null) {
+			//Comparamos solo con el nombre
+			//System.out.println("Name archivo : " + archivo.getNombre());
+			//System.out.println("Name puntero : " + puntero.myArchivo.getNombre()+ "\n");
+			if (etiqueta.equals(puntero.getMyEtiqueta().getEtiqueta())) {
 				//System.out.println("El archivo ya se encuentra en la lista de archivos\n");
 				return true;
 			}else {
@@ -150,7 +165,7 @@ public class ListaDeEtiquetas {
 			}
 		}
 	}
-	//Esta vacía la lista de archivos
+	//Esta vacia la lista de archivos
 	public Boolean isEmpty() {return tamano == 0;}
 	//Setters and getters
 	public nodoEtiqueta getCabeza() {return cabeza;}

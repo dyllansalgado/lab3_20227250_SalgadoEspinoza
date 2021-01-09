@@ -55,7 +55,7 @@ public class ListaDePreguntas {
 		setTamano(tamano +1);		
 	}
 	/**
-	 * Añadir un usuario a la lista de usuario
+	 * Agrega un usuario a la lista de usuario
 	 * @param myArchivo archivo que se quiere agregar a la lista
 	 */
 	public void agregarPreguntas(pregunta miPregunta) {
@@ -105,6 +105,44 @@ public class ListaDePreguntas {
 			return (salidaString +"\n");
 		}else {
 			return("No existen preguntas en el stack\n");
+		}
+	}
+	
+	public String preguntas2String1() {
+		if (!isEmpty()) {
+			nodoPregunta puntero =  getCabeza();
+			String salidaString = "Preguntas realizadas : \n";
+			int i = 0 ;
+			while (puntero != null) {
+				salidaString = salidaString +"\n"+ i + ".-\n";
+				salidaString = salidaString + puntero.myPregunta.getTituloPregunta();
+				puntero = puntero.getSiguiente();
+				i++;
+			}
+			return (salidaString +"\n");
+		}else {
+			return("No existen preguntas en el stack\n");
+		}
+	}
+	
+	public pregunta getPreguntaN(int n){
+		//Si el n ingresado no supera el tamaño total de archivos
+		if (n > tamano || n < 0) {
+			System.out.println("El indice excede al limite de archivos");
+			return null;
+		}else{
+			nodoPregunta puntero =  getCabeza();
+			int i = 0 ;
+			//Mientras el puntero no sea nulo
+			while (i < n && puntero != null) {
+				puntero = puntero.getSiguiente();
+				i++;
+			}if (i!= n) {
+				System.out.println("No hay preguntas disponibles");
+				return null;
+			}else {
+				return puntero.getMyPregunta();
+			}
 		}
 	}
 	//Esta vacia la lista de archivos
