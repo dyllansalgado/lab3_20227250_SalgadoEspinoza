@@ -25,7 +25,6 @@ public class ListaDeUsuarios {
 		public nodoUsuario(usuario myUsuario) {this.myUsuario = myUsuario;}
 		public nodoUsuario getSiguiente() {return siguiente;}
 		public void setSiguiente(nodoUsuario siguienteUsuario) {this.siguiente= siguienteUsuario;}
-		//public usuario getMyUsuario() {return myUsuario;}
 	}
 	
 	public ListaDeUsuarios() {}
@@ -78,10 +77,7 @@ public class ListaDeUsuarios {
 		nodoUsuario puntero = getCabeza();
 		while (puntero != null) {
 			//Comparamos solo con el nombre
-			//System.out.println("Name archivo : " + archivo.getNombre());
-			//System.out.println("Name puntero : " + puntero.myArchivo.getNombre()+ "\n");
 			if (myUsuario.getNombreUsuario().equals(puntero.myUsuario.getNombreUsuario())) {
-				//System.out.println("El archivo ya se encuentra en la lista de archivos\n");
 				return true;
 			}else {
 				puntero = puntero.getSiguiente();	
@@ -94,8 +90,6 @@ public class ListaDeUsuarios {
 		nodoUsuario puntero = getCabeza();
 		while (puntero != null) {
 			//Comparamos solo con el nombre
-			//System.out.println("Name archivo : " + archivo.getNombre());
-			//System.out.println("Name puntero : " + puntero.myArchivo.getNombre()+ "\n");
 			if (myUsuario.getNombreUsuario().equals(puntero.myUsuario.getNombreUsuario())) {
 				if (myUsuario.getClaveUsuario().equals(puntero.myUsuario.getClaveUsuario())) {
 					return true;
@@ -125,13 +119,13 @@ public class ListaDeUsuarios {
 			}
 			return (salidaString +"\n");
 		}else {
-			return("Lista de archivos vaci­a\n");
+			return("Lista de usuarios vaci­a\n");
 		}
 	}
 	public usuario getUsuarioN (int n) {
-		//Si el n ingresado no supera el tamaÃ±o total de archivos
+		//Si el n ingresado no supera el tamano total de archivos
 		if (n > tamano || n < 0) {
-			System.out.println("El indice excede al limite de archivos");
+			System.out.println("El indice excede al limite de usuarios");
 			return null;
 		}else{
 			nodoUsuario puntero =  getCabeza();
@@ -142,12 +136,11 @@ public class ListaDeUsuarios {
 				puntero = puntero.getSiguiente();
 				i++;
 			}if (i!= n) {
-				System.out.println("No hay archivos disponibles");
+				System.out.println("No hay usuarios disponibles");
 				return null;
 			}else {
 				//Creamos un archivo desde 0
 				return puntero.myUsuario;
-				//return puntero.myArchivo;
 			}
 		}
 	}

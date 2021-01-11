@@ -21,7 +21,7 @@ public class respuesta {
 		setFechaDeSubida(tiempo.getActualTime());
 	}
 	public String respuesta2String() {
-		String salidaString = "ID : " + id 
+		String salidaString = "ID : " + (id-1) 
 				+ "\nAutor : " + autor 
 				+ "\nRespuesta : " +contenido 
 				+ "\nFecha de publicacion : " + fechaDeSubida + "\n";

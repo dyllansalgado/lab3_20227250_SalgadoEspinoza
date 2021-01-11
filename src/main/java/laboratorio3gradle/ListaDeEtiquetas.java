@@ -55,7 +55,7 @@ public class ListaDeEtiquetas {
 		setTamano(tamano +1);		
 	}
 	/**
-	 * agregar un usuario a la lista de usuario
+	 * Agregar un usuario a la lista de usuario
 	 * @param myArchivo archivo que se quiere agregar a la lista
 	 */
 	public void agregarEtiquetas(etiqueta miEtiqueta) {
@@ -90,10 +90,7 @@ public class ListaDeEtiquetas {
 		nodoEtiqueta puntero = getCabeza();
 		while (puntero != null) {
 			//Comparamos solo con el nombre
-			//System.out.println("Name archivo : " + archivo.getNombre());
-			//System.out.println("Name puntero : " + puntero.myArchivo.getNombre()+ "\n");
 			if (etiqueta.equals(puntero.getMyEtiqueta().getEtiqueta())) {
-				//System.out.println("El archivo ya se encuentra en la lista de archivos\n");
 				return true;
 			}else {
 				puntero = puntero.getSiguiente();	
@@ -142,7 +139,7 @@ public class ListaDeEtiquetas {
 	 * @return Archivo, archivo con el indice || null si el indice supera los limites
 	 */
 	public etiqueta getEtiquetaN(int n){
-		//Si el n ingresado no supera el tamaÃ±o total de archivos
+		//Si el n ingresado no supera el tamano total de archivos
 		if (n > tamano || n < 0) {
 			System.out.println("El indice excede al limite de archivos");
 			return null;
@@ -151,7 +148,6 @@ public class ListaDeEtiquetas {
 			int i = 0 ;
 			//Mientras el puntero no sea nulo
 			while (i < n && puntero != null) {
-				System.out.println(i+".-");
 				puntero = puntero.getSiguiente();
 				i++;
 			}if (i!= n) {
@@ -161,11 +157,10 @@ public class ListaDeEtiquetas {
 				//Creamos un archivo desde 0
 				etiqueta miEtiqueta = new etiqueta(puntero.myEtiqueta.getEtiqueta(), puntero.myEtiqueta.getDescripcionEtiqueta());
 				return miEtiqueta;
-				//return puntero.myArchivo;
 			}
 		}
 	}
-	//Esta vacia la lista de archivos
+	//Esta vaci­a la lista de archivos
 	public Boolean isEmpty() {return tamano == 0;}
 	//Setters and getters
 	public nodoEtiqueta getCabeza() {return cabeza;}

@@ -45,10 +45,10 @@ public class pregunta {
 	public String pregunta2String() {
 		String salidaString;
 		salidaString = 
-				"ID : " + idPregunta + 
-				"\nTi­tulo : " + getTituloPregunta() +
-				"Contenido : "+ getContenidoPregunta() + 
-				"Fecha de Publicacion : " + getFechaPublicacion()+
+				"ID : " + (idPregunta-1) + 
+				"\nTitulo : " + getTituloPregunta() +
+				"\nContenido : "+ getContenidoPregunta() + 
+				"\nFecha de Publicacion : " + getFechaPublicacion()+
 				"\nAutor:" + getAutorPregunta()+
 				"\nEstado: " + estado +
 				"\nRecompensa : " + recompensa +

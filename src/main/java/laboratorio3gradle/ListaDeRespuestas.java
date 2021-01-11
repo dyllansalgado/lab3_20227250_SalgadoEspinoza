@@ -31,7 +31,7 @@ public class ListaDeRespuestas {
 	//Metodos
 	/**
 	 * Insertar la inicio de la lista
-	 * @param myArchivo  archivo que se quiere agregar a la lista
+	 * @param miRespuesta  archivo que se quiere agregar a la lista
 	 */
 	public void insertarPrincipio(respuesta miRespuesta){
 		nodoRespuesta nodo = new nodoRespuesta(miRespuesta);
@@ -43,7 +43,7 @@ public class ListaDeRespuestas {
 	}
 	/**
 	 * Insertar un archivo al final de la lista
-	 * @param myArchivo  archivo que se quiere agregar a la lista
+	 * @param miRespuesta  archivo que se quiere agregar a la lista
 	 */
 	//Insertar al final
 	public void insertarFinal(respuesta miRespuesta) {
@@ -58,7 +58,7 @@ public class ListaDeRespuestas {
 	}
 	/**
 	 * Agregar un usuario a la lista de usuario
-	 * @param myArchivo archivo que se quiere agregar a la lista
+	 * @param miRespuesta archivo que se quiere agregar a la lista
 	 */
 	public void agregarRespuesta(respuesta miRespuesta) {
 		if (isEmpty()) {
@@ -91,7 +91,7 @@ public class ListaDeRespuestas {
 	public respuesta getRespuestaN(int n) {
 		//Si el n ingresado no supera el tamano total de archivos
 		if (n > tamano || n < 0) {
-			System.out.println("El indice excede al limite de archivos");
+			System.out.println("El indice excede al limite de respuestas");
 			return null;
 		}else{
 			nodoRespuesta puntero =  getCabeza();
@@ -102,18 +102,17 @@ public class ListaDeRespuestas {
 				puntero = puntero.getSiguiente();
 				i++;
 			}if (i!= n) {
-				System.out.println("No hay archivos disponibles");
+				System.out.println("No hay respuestas disponibles");
 				return null;
 			}else {
-				//Creamos un archivo desde 0
+				//Creamos lista de respuestas desde 0
 				return puntero.myRespuesta;
-				//return puntero.myArchivo;
 			}
 		}
 		
 	}
 	
-	//Esta vaci­a la lista de archivos
+	//Esta vaci­a la lista de respuestas
 	public Boolean isEmpty() {return tamano == 0;}
 	//Setters and Getters
 	public int getTamano() {return tamano;}

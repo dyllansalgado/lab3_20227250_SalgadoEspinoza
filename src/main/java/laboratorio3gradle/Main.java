@@ -5,23 +5,23 @@
  */
 package laboratorio3gradle;
 import java.util.Scanner;
+
 public class Main {
 	/**
 	 * Mostrar los comandos de StackOverflow
 	 * @param args
 	 */
-        @SuppressWarnings("empty-statement")
 	public static void main(String[] args) {	
 		//Creando usuarios
 		Scanner entradaEscaner = new Scanner(System.in);
 		//USUARIO 1
 		String nameUser = "Dyllan";
-		String passUser = "";
+		String passUser = "123";
 		int reputacion = 100;
 		stack myStack = new stack(nameUser, passUser,reputacion);
 		myStack.logout();
 		//USUARIO 2
-		nameUser = "Diegito<3";
+		nameUser = "Diego";
 		passUser = "diegito123";
 		myStack.registrarUsuario(nameUser,passUser,reputacion);
 		//USUARIO 3
@@ -33,14 +33,54 @@ public class Main {
 		passUser = "1";
 		myStack.registrarUsuario(nameUser,passUser,reputacion);
 		//Registrar etiquetas
-		myStack.agregarEtiqueta("C#", "Lenguaje de programacion C#, desarrollado por Windows");
+		myStack.agregarEtiqueta("C#", "Lenguaje de programación C#, desarrollado por Windows");
 		myStack.agregarEtiqueta("Python","Python el lengiaje mas popular del momento");
 		myStack.agregarEtiqueta("C", "nerd");
-		//Registrar preguntas
-		etiqueta miEtiqueta = myStack.etiquetas.getEtiquetaN(1) ;
-		//(String titulo,String contenido, String autor,etiqueta miEtiqueta, int reputacion)
-		pregunta miPregunta = new pregunta("Como agrego un elemento a una lista\n","Hola gente, tengo una duda, no se como agregar un elemnto, soy nuevo en python\n", "Dyllan",miEtiqueta,myStack.preguntas.tamano+1,50);
-		myStack.preguntas.agregarPreguntas(miPregunta);
+		myStack.agregarEtiqueta("Unity", "GameDev");
+		myStack.agregarEtiqueta("Java", "javita");
+		//Registrar preguntas y sus respuestas
+                
+		//PREGUNTA 1 : 
+		myStack.ask("Como agrego un elemento a una lista\n",
+		"Hola gente, tengo una duda, no se como agregar un elemnto, soy nuevo en python\n", 
+		"Dyllan",myStack.etiquetas.getEtiquetaN(1),0);
+		myStack.preguntas.getPreguntaN(0).autorRecompensa= "Dyllan";
+		//PREGUNTA 2 :
+		myStack.ask("Como limito la velocidad\n",
+		"Hola gente, tengo una duda, no se como limitar la velocidad de mi personaje\n", 
+		"polka",myStack.etiquetas.getEtiquetaN(3),0);
+		myStack.preguntas.getPreguntaN(1).autorRecompensa= "polka";
+                //PREGUNTA 3:
+                myStack.ask("Commit\n","tengo una duda, no se hacer un commit\n", "Zapallo",myStack.etiquetas.getEtiquetaN(2),0);
+                //PREGUNTA 4:
+                myStack.ask("Programacion\n","tengo una duda, como hago un ciclo\n", "Zapallo",myStack.etiquetas.getEtiquetaN(1),0);
+                //PREGUNTA 5:
+                myStack.ask("Listas en C\n","tengo una duda, como hago una lista enlazada en C \n", "Zapallo",myStack.etiquetas.getEtiquetaN(2),0);
+                
+                //RESPUESTA 1:
+		myStack.answer(1, 
+		"Declara una variable float que sea la velociad maxima, en update que tenga un if que limite la velocidad maxima\n", 
+		"Zapallo");
+                //RESPUESTA 2:
+                myStack.answer(0, "Debes ocupar el metodo append \n", "polka");
+                //RESPUESTA 3:
+                myStack.answer(2, "Debes abrir la consola ingresar git commit -m \n", "Dyllan");
+                //RESPUESTA 4:
+                myStack.answer(2, "Debes instalar en la consola git primero y luego ingresar git clone, luego git commit -m \n", "polka");
+                //RESPUESTA 5:
+                myStack.answer(1, "Debes buscar en la siguiente pagina www.holi.com\n", "Dyllan");
+                //RESPUESTA 6:
+                myStack.answer(1, "Debes ingresar un if para que te limite la velocidad\n", "Diego");
+                //RESPUESTA 7:
+                myStack.answer(3, "Dbes hacer un while y asignar el limite hasta que llegue i", "Diego");
+                //RESPUESTA 8:
+                myStack.answer(3, "Con un ciclo for la haces mas simple\n", "Dyllan");
+                //RESPUESTA 9:
+                myStack.answer(0, "Supongo que es similar que en java", "Diego");
+                //RESPUESTA 10:
+                myStack.answer(0, "Mi respuesta es troll xD\n", "Zapallo");
+
+		
 		
 		int x = -1;
 		while(x == -1){
@@ -120,7 +160,12 @@ public class Main {
           	case 6:{
           		try {
           			if (myStack.ActivoUsuario != null) {
-						myStack.reward();
+          				if (myStack.ActivoUsuario.reputacionUsuario !=0) {
+          					myStack.reward();
+						}else {
+							System.out.println("Usted no tiene reputacion necesaria para ofrecer recompensas");
+						}
+						
 					}
 				} catch (Exception e) {
 					// TODO: handle exception

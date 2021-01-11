@@ -29,7 +29,7 @@ public class ListaDePreguntas {
 	//Metodos
 	/**
 	 * Insertar la inicio de la lista
-	 * @param myArchivo  archivo que se quiere agregar a la lista
+	 * @param miPregunta  archivo que se quiere agregar a la lista
 	 */
 	public void insertarPrincipio(pregunta miPregunta){
 		nodoPregunta nodo = new nodoPregunta(miPregunta);
@@ -41,7 +41,7 @@ public class ListaDePreguntas {
 	}
 	/**
 	 * Insertar un archivo al final de la lista
-	 * @param myArchivo  archivo que se quiere agregar a la lista
+	 * @param miPregunta  archivo que se quiere agregar a la lista
 	 */
 	//Insertar al final
 	public void insertarFinal(pregunta miPregunta) {
@@ -55,7 +55,7 @@ public class ListaDePreguntas {
 		setTamano(tamano +1);		
 	}
 	/**
-	 * Agregar un usuario a la lista de usuario
+	 * agregar un usuario a la lista de usuario
 	 * @param myArchivo archivo que se quiere agregar a la lista
 	 */
 	public void agregarPreguntas(pregunta miPregunta) {
@@ -159,7 +159,7 @@ public class ListaDePreguntas {
 		}
 
 	}
-	//Esta vacia la lista de archivos
+	//Esta vaci­a la lista de archivos
 	public Boolean isEmpty() {return tamano == 0;}
 	//Setters and getters
 	public nodoPregunta getCabeza() {return cabeza;}
@@ -167,3 +167,4 @@ public class ListaDePreguntas {
 	public int getTamano() {return tamano;}
 	public void setTamano(int tamano) {this.tamano = tamano;}
 }
+

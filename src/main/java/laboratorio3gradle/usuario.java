@@ -15,14 +15,14 @@ public class usuario {
 	int reputacionUsuario;
 	//Constructor
 	public usuario(String nombreUsuario, String claveUsuario) {
-            setClaveUsuario(claveUsuario);
-            setNombreUsuario(nombreUsuario); 
-        }
+        setClaveUsuario(claveUsuario);
+        setNombreUsuario(nombreUsuario); 
+    }
 	public usuario(String nombreUsuario, String claveUsuario,int rep) {
-            setClaveUsuario(claveUsuario);
-            setNombreUsuario(nombreUsuario);  
+        setClaveUsuario(claveUsuario);
+        setNombreUsuario(nombreUsuario);  
         this.reputacionUsuario = rep;
-        }
+    }
 	//Selectores
 	public String getNombreUsuario() {return nombreUsuario;}	
 	public String getClaveUsuario() {return claveUsuario;}	
