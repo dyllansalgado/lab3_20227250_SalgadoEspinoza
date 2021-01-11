@@ -19,7 +19,10 @@ public class ListaDeRespuestas {
 		private respuesta myRespuesta;
 		private nodoRespuesta siguiente = null;
 		//Constructor
-		public nodoRespuesta(respuesta miRespuesta) {}
+		public nodoRespuesta(respuesta miRespuesta) {
+			myRespuesta = miRespuesta;
+			siguiente = null;
+		}
 		public nodoRespuesta getSiguiente() { return siguiente;}
 		public void setSiguiente(nodoRespuesta siguiente) {this.siguiente = siguiente;}
 	}
@@ -54,7 +57,7 @@ public class ListaDeRespuestas {
 		setTamano(tamano +1);		
 	}
 	/**
-	 * Agrega un usuario a la lista de usuario
+	 * Agregar un usuario a la lista de usuario
 	 * @param myArchivo archivo que se quiere agregar a la lista
 	 */
 	public void agregarRespuesta(respuesta miRespuesta) {
@@ -71,11 +74,11 @@ public class ListaDeRespuestas {
 	public String respuestas2String() {
 		if (!isEmpty()) {
 			nodoRespuesta puntero =  getCabeza();
-			String salidaString = "Respuestas realizadas :";
+			String salidaString = "\n\nRespuestas realizadas : ";
 			int i = 0 ;
 			while (puntero != null) {
-				salidaString = salidaString+"\n" + i + ".-";
-				salidaString = salidaString + puntero.myRespuesta.getAutor() + " " + puntero.myRespuesta.getFechaDeSubida()	+"  :"+ puntero.myRespuesta.getContenido();
+				salidaString = salidaString+"\n\n" + i + ".-";
+				salidaString = salidaString + puntero.myRespuesta.respuesta2String();
 				puntero = puntero.getSiguiente();
 				i++;
 			}
@@ -85,7 +88,32 @@ public class ListaDeRespuestas {
 		}
 	}
 	
-	//Esta vacia la lista de archivos
+	public respuesta getRespuestaN(int n) {
+		//Si el n ingresado no supera el tamano total de archivos
+		if (n > tamano || n < 0) {
+			System.out.println("El indice excede al limite de archivos");
+			return null;
+		}else{
+			nodoRespuesta puntero =  getCabeza();
+			int i = 0 ;
+			//Mientras el puntero no sea nulo
+			while (i < n && puntero != null) {
+				System.out.println(i+".-");
+				puntero = puntero.getSiguiente();
+				i++;
+			}if (i!= n) {
+				System.out.println("No hay archivos disponibles");
+				return null;
+			}else {
+				//Creamos un archivo desde 0
+				return puntero.myRespuesta;
+				//return puntero.myArchivo;
+			}
+		}
+		
+	}
+	
+	//Esta vaci­a la lista de archivos
 	public Boolean isEmpty() {return tamano == 0;}
 	//Setters and Getters
 	public int getTamano() {return tamano;}

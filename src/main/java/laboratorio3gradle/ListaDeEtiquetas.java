@@ -55,7 +55,7 @@ public class ListaDeEtiquetas {
 		setTamano(tamano +1);		
 	}
 	/**
-	 * Agregar un usuario a la lista de usuario
+	 * agregar un usuario a la lista de usuario
 	 * @param myArchivo archivo que se quiere agregar a la lista
 	 */
 	public void agregarEtiquetas(etiqueta miEtiqueta) {

@@ -9,7 +9,7 @@ package laboratorio3gradle;
  *
  * @author dyllan
  */
-public final class pregunta {
+public class pregunta {
 	int idPregunta;
 	String tituloPregunta;
 	String contenidoPregunta;
@@ -20,6 +20,7 @@ public final class pregunta {
 	ListaDeEtiquetas etiquetas;
 	int estado;
 	int recompensa;
+	String autorRecompensa;
 	public pregunta(String tituloPregunta,String contenidoPregunta,String autor,etiqueta miEtiqueta,int id) {
 		setTituloPregunta(tituloPregunta);
 		setContenidoPregunta(contenidoPregunta);
@@ -45,7 +46,7 @@ public final class pregunta {
 		String salidaString;
 		salidaString = 
 				"ID : " + idPregunta + 
-				"\nTitulo : " + getTituloPregunta() +
+				"\nTi­tulo : " + getTituloPregunta() +
 				"Contenido : "+ getContenidoPregunta() + 
 				"Fecha de Publicacion : " + getFechaPublicacion()+
 				"\nAutor:" + getAutorPregunta()+
@@ -56,7 +57,11 @@ public final class pregunta {
 		return salidaString;
 	}
 	public void answer(respuesta miRespuesta) {
-		respuestas.agregarRespuesta(miRespuesta);
+		if (respuestas.getTamano() == 0) {
+			respuestas = new ListaDeRespuestas() ;
+			respuestas.agregarRespuesta(miRespuesta);
+		}
+		
 	}
 	public int getIdPregunta() {return idPregunta;}
 	public void setIdPregunta(int idPregunta) {this.idPregunta = idPregunta;}

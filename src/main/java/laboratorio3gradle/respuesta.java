@@ -20,6 +20,13 @@ public class respuesta {
 		setId(id);
 		setFechaDeSubida(tiempo.getActualTime());
 	}
+	public String respuesta2String() {
+		String salidaString = "ID : " + id 
+				+ "\nAutor : " + autor 
+				+ "\nRespuesta : " +contenido 
+				+ "\nFecha de publicacion : " + fechaDeSubida + "\n";
+		return salidaString;
+	}
 	public String getContenido() {return contenido;}
 	public void setContenido(String contenido) {this.contenido = contenido;}
 	public String getAutor() {return autor;}

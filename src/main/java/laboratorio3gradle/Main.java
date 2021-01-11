@@ -16,9 +16,10 @@ public class Main {
 		Scanner entradaEscaner = new Scanner(System.in);
 		//USUARIO 1
 		String nameUser = "Dyllan";
-		String passUser = "dyllan123";
+		String passUser = "";
 		int reputacion = 100;
 		stack myStack = new stack(nameUser, passUser,reputacion);
+		myStack.logout();
 		//USUARIO 2
 		nameUser = "Diegito<3";
 		passUser = "diegito123";
@@ -38,8 +39,8 @@ public class Main {
 		//Registrar preguntas
 		etiqueta miEtiqueta = myStack.etiquetas.getEtiquetaN(1) ;
 		//(String titulo,String contenido, String autor,etiqueta miEtiqueta, int reputacion)
-		pregunta miPregunta = new pregunta("Como agrego un elemento a una lista\n","Hola gente, tengo una duda, no se como añadir un elemnto, soy nuevo en python\n", "Dyllan",miEtiqueta,myStack.preguntas.tamano+1,50);
-		myStack.preguntas.agregarPreguntas(miPregunta);;
+		pregunta miPregunta = new pregunta("Como agrego un elemento a una lista\n","Hola gente, tengo una duda, no se como agregar un elemnto, soy nuevo en python\n", "Dyllan",miEtiqueta,myStack.preguntas.tamano+1,50);
+		myStack.preguntas.agregarPreguntas(miPregunta);
 		
 		int x = -1;
 		while(x == -1){
@@ -119,7 +120,7 @@ public class Main {
           	case 6:{
           		try {
           			if (myStack.ActivoUsuario != null) {
-						
+						myStack.reward();
 					}
 				} catch (Exception e) {
 					// TODO: handle exception
@@ -129,7 +130,7 @@ public class Main {
           	}
           	case 7:{
       			if (myStack.ActivoUsuario != null) {
-					
+      				myStack.accept();
 				}
           		x = -1;
           		break;
@@ -141,7 +142,6 @@ public class Main {
           	}
           	case 9:{
           		x= 3;
-          		System.out.println("Aplicacion cerrada\n");
           		break;
           	}
           	case 10:{
