@@ -1,15 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package laboratorio3gradle;
 
 /**
- *
- * @author dyllan
+ * Una clase para representar la pregunta.
+ * Se utiliza esta clase para realizar las preguntas.
+ * Los atributos de la clase es idPregunta,tituloPregunta,contenidoPregunta,fechaPublicacion,autorPregunta,estado,recompensa,
+ * las lista con respuestas y la lista con etiquetas, autorRecompensa.
+ * @author Dyllan Salgado
  */
 public class pregunta {
+        //Atributos de la clase pregunta.
 	int idPregunta;
 	String tituloPregunta;
 	String contenidoPregunta;
@@ -21,6 +20,7 @@ public class pregunta {
 	int estado;
 	int recompensa;
 	String autorRecompensa;
+        //Constructor de la pregunta sin recompensa.
 	public pregunta(String tituloPregunta,String contenidoPregunta,String autor,etiqueta miEtiqueta,int id) {
 		setTituloPregunta(tituloPregunta);
 		setContenidoPregunta(contenidoPregunta);
@@ -30,7 +30,8 @@ public class pregunta {
 		setFechaPublicacion(tiempo.getActualTime());
 		setIdPregunta(id);
 		respuestas = new ListaDeRespuestas();
-	}	
+        }
+        //Constructor de la pregunta con recompensas.
 	public pregunta(String tituloPregunta,String contenidoPregunta,String autor,etiqueta miEtiqueta,int id,int recompensa) {
 		setTituloPregunta(tituloPregunta);
 		setContenidoPregunta(contenidoPregunta);
@@ -41,7 +42,11 @@ public class pregunta {
 		setIdPregunta(id);
 		setRecompensa(recompensa);
 		respuestas = new ListaDeRespuestas();
-	}	
+	}
+        /**
+	* Metodo para transformar las preguntas en string
+	* @return salidaString 
+	*/
 	public String pregunta2String() {
 		String salidaString;
 		salidaString = 
@@ -56,6 +61,10 @@ public class pregunta {
 				etiquetas.etiquetas2String1();
 		return salidaString;
 	}
+        /**
+	* Metodo para asignar una respuesta a una pregunta.
+        * @param miRespuesta  es la respuesta que se asigna a la pregunta.
+	*/
 	public void answer(respuesta miRespuesta) {
 		if (respuestas.getTamano() == 0) {
 			respuestas = new ListaDeRespuestas() ;
@@ -63,6 +72,7 @@ public class pregunta {
 		}
 		
 	}
+        //Selectores y modificares de la clase pregunta.
 	public int getIdPregunta() {return idPregunta;}
 	public void setIdPregunta(int idPregunta) {this.idPregunta = idPregunta;}
 	public int getRecompensa() {return recompensa;}

@@ -1,34 +1,45 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package laboratorio3gradle;
 
 /**
- *
- * @author dyllan
+ * Una clase para representar al usuario.
+ * Se utiliza esta clase para representar a los usuarios.
+ * Los atributos de la clase es nombreUsuario, claveUsuario y reputacionUsuario.
+ * @author Dyllan Salgado
  */
 public class usuario {
+        //Atributos de usuario.
 	String nombreUsuario;
 	String claveUsuario;
 	int reputacionUsuario;
-	//Constructor
+	//Constructor de la clase usuario
 	public usuario(String nombreUsuario, String claveUsuario) {
-        setClaveUsuario(claveUsuario);
-        setNombreUsuario(nombreUsuario); 
-    }
+            setClaveUsuario(claveUsuario);
+            setNombreUsuario(nombreUsuario); 
+        }
+        //Constructor de la clase usuario
 	public usuario(String nombreUsuario, String claveUsuario,int rep) {
-        setClaveUsuario(claveUsuario);
-        setNombreUsuario(nombreUsuario);  
+            setClaveUsuario(claveUsuario);
+            setNombreUsuario(nombreUsuario);  
         this.reputacionUsuario = rep;
-    }
-	//Selectores
-	public String getNombreUsuario() {return nombreUsuario;}	
-	public String getClaveUsuario() {return claveUsuario;}	
-	public int getReputacionUsuario() {return reputacionUsuario;}	
-	//modificadores
-	public void setNombreUsuario(String nombreUsuario) {this.nombreUsuario = nombreUsuario;}
-	public void setClaveUsuario(String claveUsuario) {this.claveUsuario = claveUsuario;}
-	public void setReputacionUsuario(int reputacionUsuario) {this.reputacionUsuario = reputacionUsuario;}
+        }
+	//Selectores de la clase usuario
+	public String getNombreUsuario() {
+            return nombreUsuario;
+        }	
+	public String getClaveUsuario() {
+            return claveUsuario;
+        }	
+	public int getReputacionUsuario() {
+            return reputacionUsuario;
+        }	
+	//Modificadores de la clase usuario
+	public void setNombreUsuario(String nombreUsuario) {
+            this.nombreUsuario = nombreUsuario;
+        }
+	public void setClaveUsuario(String claveUsuario) {
+            this.claveUsuario = claveUsuario;
+        }
+	public void setReputacionUsuario(int reputacionUsuario) {
+            this.reputacionUsuario = reputacionUsuario;
+        }
 }

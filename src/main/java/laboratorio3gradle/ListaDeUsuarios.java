@@ -1,38 +1,43 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package laboratorio3gradle;
 
 /**
- * Clase de lista de usuarios	
- * @author dyllan
- *
+ * Una clase para representar la lista de usuarios que contendrá el stack.
+ * Se utiliza para agrupar todas los usuarios en una lista.
+ * @author Dyllan Salgado
  */
 public class ListaDeUsuarios {
+        //Atributos de la clase ListaDePreguntas.
 	private nodoUsuario cabeza = null;
 	private int tamano;
-	/**
-	 * 
-	 * @author dyllan
-	 *
-	 */
+        /**
+        * Una clase para representar el nodo una lista, es por este motivo que esta en privado.
+        * Se utilizan solo en las listas y nada mas.
+        * @author Dyllan Salgado
+        */
 	private class nodoUsuario {
+                //Atributos de la clase nodoUsuario.
 		private usuario myUsuario;
 		private nodoUsuario siguiente = null;
-		//Constructor
-		public nodoUsuario(usuario myUsuario) {this.myUsuario = myUsuario;}
-		public nodoUsuario getSiguiente() {return siguiente;}
-		public void setSiguiente(nodoUsuario siguienteUsuario) {this.siguiente= siguienteUsuario;}
+		//Constructor de la clase nodoUsuario.
+		public nodoUsuario(usuario myUsuario) {
+                    this.myUsuario = myUsuario;
+                }
+                //Selector de la clase nodoUsuario.
+		public nodoUsuario getSiguiente() {
+                    return siguiente;
+                }
+                //Modificadores de la clase nodoUsuario.
+		public void setSiguiente(nodoUsuario siguienteUsuario) {
+                    this.siguiente= siguienteUsuario;
+                }
 	}
-	
+	//Metodos para trabajar con la ListaDeUsuarios.
 	public ListaDeUsuarios() {}
-	//Metodos
-	/**
-	 * Insertar la inicio de la lista
-	 * @param myArchivo  archivo que se quiere agregar a la lista
-	 */
+        /**
+	* Insertar la inicio de la lista.
+	* @param miUsuario corresponde al usuario que se quiere agregar al inicio de la lista.
+ 	* @author Dyllan Salgado
+	*/
 	public void insertarPrincipio(usuario miUsuario){
 		nodoUsuario nodo = new nodoUsuario(miUsuario) ;
 		//EL siguiente elemento es la cabeza
@@ -41,10 +46,11 @@ public class ListaDeUsuarios {
 		setCabeza(nodo);
 		setTamano(tamano+1);
 	}
-	/**
-	 * Insertar un archivo al final de la lista
-	 * @param myArchivo  archivo que se quiere agregar a la lista
-	 */
+        /**
+	* Insertar una etiqueta al final de la lista.
+	* @param miUsuario etiqueta que se quiere agregar al final de la lista.
+ 	* @author Dyllan Salgado
+	*/
 	//Insertar al final
 	public void insertarFinal(usuario miUsuario) {
 		nodoUsuario usuario = new nodoUsuario(miUsuario);
@@ -57,22 +63,26 @@ public class ListaDeUsuarios {
 		setTamano(tamano +1);		
 	}
 	/**
-	 * Agregar un usuario a la lista de usuario
-	 * @param myArchivo archivo que se quiere agregar a la lista
-	 */
+	* Agregar un usuario a la lista de usuarios.
+	* @param miUsuario etiqueta que se quiere agregar a la lista.
+ 	* @author Dyllan Salgado
+	*/
 	public void agregarUsuario(usuario miUsuario) {
+                //Si la lista esta vacia se ingresa al inicio.
 		if (isEmpty()) {
 			insertarPrincipio(miUsuario);
+                //Si no al final.
 		}else {
 			insertarFinal(miUsuario);
 		}
 	}	
 	
 	/**
-	 * Metodo que consulta si un archivos se encuentra dentro de otra lista de archivos
-	 * @param archivo que se va a comparar con el resto de los archivos, se compara solo el nombre
-	 * @return Boolean true si se encuentra dentro, false si no se encuentra
-	 */
+	* Método que consulta si un usuario se encuentra ya en la lista.
+	* @param myUsuario que se va a comparar con el resto de las usuarios, se compara solo el nombre.
+	* @return Boolean true si se encuentra dentro, false si no se encuentra
+ 	* @author Dyllan Salgado
+	*/
 	public Boolean isInside(usuario myUsuario) {
 		nodoUsuario puntero = getCabeza();
 		while (puntero != null) {
@@ -85,7 +95,11 @@ public class ListaDeUsuarios {
 		}
 		return false;
 	}
-	
+	/**
+	* Metodo que consulta si la clave de un usuario corresponde al nombre de usuario dentro de la lista de Usuarios
+	* @param myUsuario que se va a comparar con el resto de los usuarios, se compara solo el nombre y la clave para ver si están correctas.
+	* @return Boolean true si se encuentra dentro, false si no se encuentra
+	*/
 	public Boolean correctPass(usuario myUsuario) {
 		nodoUsuario puntero = getCabeza();
 		while (puntero != null) {
@@ -103,9 +117,9 @@ public class ListaDeUsuarios {
 	}
 	
 	/**
-	 * Devolver todos los archivos y su contenido en un string
-	 * @return
-	 */
+	* Devolver todos los usuarios y su contenido en un string.
+        * @return mensaje por pantalla.
+	*/
 	public String usuarios2String() {
 		if (!isEmpty()) {
 			nodoUsuario puntero =  getCabeza();
@@ -122,6 +136,12 @@ public class ListaDeUsuarios {
 			return("Lista de usuarios vaci­a\n");
 		}
 	}
+        /**
+	* Metodo que dado un indice n, devuelva el usuario correspondiente en la lista.
+	* @param n, indice donde se encuentra el usuario.
+	* @return usuario, usuario con el indice || null si el indice supera los limites
+ 	* @author Dyllan Salgado
+	*/
 	public usuario getUsuarioN (int n) {
 		//Si el n ingresado no supera el tamano total de archivos
 		if (n > tamano || n < 0) {
@@ -144,8 +164,13 @@ public class ListaDeUsuarios {
 			}
 		}
 	}
+        /**
+	* Metodo que dado un nombre, devuelva el usuario correspondiente en la lista.
+	* @param nombre, nombre del usuario.
+	* @return usuario con el nombre || null si el nombre supera los limites
+ 	* @author Dyllan Salgado
+	*/
 	public usuario getUsuarioName (String nombre) {
-
 		nodoUsuario puntero =  getCabeza();
 		//Mientras el puntero no sea nulo
 		while (puntero != null) {
@@ -157,11 +182,22 @@ public class ListaDeUsuarios {
 		return null;
 	}
 	
-	//Esta vaci­a la lista de archivos
-	public Boolean isEmpty() {return tamano == 0;}
-	//Setters and Getters
-	public int getTamano() {return tamano;}
-	public void setTamano(int tamano) {this.tamano = tamano;}
-	public nodoUsuario getCabeza() {return cabeza;}
-	public void setCabeza(nodoUsuario cabeza) {this.cabeza = cabeza;}
+	//Esta vaci­a la lista de usuarios.
+	public Boolean isEmpty() {
+            return tamano == 0;
+        }
+	//Selectores de la clase ListaDeUsuarios.
+	public int getTamano() {
+            return tamano;
+        }
+        public nodoUsuario getCabeza() {
+            return cabeza;
+        }
+        //Modificadores de la clase ListaDeEtiquetas.
+	public void setTamano(int tamano) {
+            this.tamano = tamano;
+        }
+	public void setCabeza(nodoUsuario cabeza) {
+            this.cabeza = cabeza;
+        }
 }

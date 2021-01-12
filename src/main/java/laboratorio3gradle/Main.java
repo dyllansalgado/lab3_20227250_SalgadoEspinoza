@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package laboratorio3gradle;
 import java.util.Scanner;
 
@@ -79,9 +74,6 @@ public class Main {
                 myStack.answer(0, "Supongo que es similar que en java", "Diego");
                 //RESPUESTA 10:
                 myStack.answer(0, "Mi respuesta es troll xD\n", "Zapallo");
-
-		
-		
 		int x = -1;
 		while(x == -1){
     	try{
@@ -118,7 +110,6 @@ public class Main {
           		try {
 					myStack.login();
 				} catch (Exception e) {
-					// TODO: handle exception
 				}
           		x = -1;
           		break;
@@ -129,7 +120,6 @@ public class Main {
 						myStack.agregarEtiqueta();
 					}
 				} catch (Exception e) {
-					// TODO: handle exception
 				}
           		
           		x = -1;

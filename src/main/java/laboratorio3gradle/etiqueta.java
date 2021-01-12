@@ -1,26 +1,32 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package laboratorio3gradle;
 
 /**
- *
- * @author dyllan
+ * Una clase para representar la etiqueta para las preguntas.
+ * Se utiliza esta clase para saber a que area de informacion va enfocada la pregunta.
+ * Los atributos de la clase es nombre de la etiqueta y una descripción de esta misma.
+ * @author Dyllan Salgado
  */
 public class etiqueta {
-	String etiqueta;
-	String descripcionEtiqueta;
-	//Constructor
-	public etiqueta(String etiqueta, String descripcionEtiqueta) {
+    //Atributos de la clase etiqueta.
+    String etiqueta;
+    String descripcionEtiqueta;
+    //Constructor para la clase etiqueta.
+    public etiqueta(String etiqueta, String descripcionEtiqueta) {
         this.etiqueta = etiqueta;
         this.descripcionEtiqueta = descripcionEtiqueta;   
     }
-	//Selector
-	public String getEtiqueta() {return etiqueta;}
-	public String getDescripcionEtiqueta() {return descripcionEtiqueta;}
-	//Modificador
-	public void setDescripcionEtiqueta(String descripcionEtiqueta) {this.descripcionEtiqueta = descripcionEtiqueta;}
-	public void setEtiqueta(String etiqueta) {this.etiqueta = etiqueta;}
+    //Selectores para la clase etiqueta.
+    public String getEtiqueta(){
+        return etiqueta;
+    }
+    public String getDescripcionEtiqueta(){
+        return descripcionEtiqueta;
+    }
+    //Modificadores para la clase etiqueta.
+    public void setDescripcionEtiqueta(String descripcionEtiqueta){
+        this.descripcionEtiqueta = descripcionEtiqueta;
+    }
+    public void setEtiqueta(String etiqueta){
+        this.etiqueta = etiqueta;
+    }
 }

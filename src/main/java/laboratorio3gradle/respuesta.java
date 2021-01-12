@@ -1,25 +1,28 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package laboratorio3gradle;
 
 /**
- *
- * @author dyllan
+ * Una clase para representar la respuesta.
+ * Se utiliza esta clase para realizar las respuestas de las preguntas.
+ * Los atributos de la clase es contenido,autor,fechaDeSubida y el id.
+ * @author Dyllan Salgado
  */
 public class respuesta {
+        //Atributos de la clase respuesta.
 	private String contenido;
 	private String autor;
 	private String fechaDeSubida;
 	private int id;
+        //Constructor de la respuesta.
 	public respuesta(String respuesta,String autor,int id) {
 		setContenido(respuesta);
 		setAutor(autor);
 		setId(id);
 		setFechaDeSubida(tiempo.getActualTime());
 	}
+                /**
+	* Metodo para transformar las respuestas en string
+	* @return salidaString 
+	*/
 	public String respuesta2String() {
 		String salidaString = "ID : " + (id-1) 
 				+ "\nAutor : " + autor 
@@ -27,6 +30,7 @@ public class respuesta {
 				+ "\nFecha de publicacion : " + fechaDeSubida + "\n";
 		return salidaString;
 	}
+        //Selectores y modificares de la clase respuesta.
 	public String getContenido() {return contenido;}
 	public void setContenido(String contenido) {this.contenido = contenido;}
 	public String getAutor() {return autor;}

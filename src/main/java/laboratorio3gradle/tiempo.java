@@ -1,36 +1,25 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package laboratorio3gradle;
-
-/**
- *
- * @author dyllan
- */
 import java.text.SimpleDateFormat;
 import java.util.Date; 
-/*
- * Clase global que es solo para obtener la fecha actual en un determinado formato
- * @author dyllan
- * */
-
+/**
+ * Una clase para representar la fecha.
+ * Se utiliza esta clase para las preguntas y respuestas.
+ * Se usa para obtener el tiempo real del momento de generar respuestas y preguntas.
+ * @author Dyllan Salgado
+ */
 public class tiempo {
 	//Atributo de clase String
 	private static String actualTime;
-	
 	/**
 	 * Obtener el tiempo actual
-	 * @return uns tring con el tiempo actualmente
+	 * @return un string con el tiempo actualmente
 	 */
 	public static String getActualTime() {
 		tiempo.setActualTime() ;
 		return actualTime;
 	}
-	
 	/**
-	 * Actualizar el tiempoa actual
+	 * Actualizar el tiempo a actual
 	 */
 	public static void setActualTime() {
 		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
