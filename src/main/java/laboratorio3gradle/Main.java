@@ -28,7 +28,7 @@ public class Main {
 		passUser = "1";
 		myStack.registrarUsuario(nameUser,passUser,reputacion);
 		//Registrar etiquetas
-		myStack.agregarEtiqueta("C#", "Lenguaje de programación C#, desarrollado por Windows");
+		myStack.agregarEtiqueta("C#", "Lenguaje de programacion C#, desarrollado por Windows");
 		myStack.agregarEtiqueta("Python","Python el lengiaje mas popular del momento");
 		myStack.agregarEtiqueta("C", "nerd");
 		myStack.agregarEtiqueta("Unity", "GameDev");
@@ -195,6 +195,7 @@ public class Main {
         	}
           	default :{
           		System.out.println("Ingrese una opcion valida\n");
+                        x=-1;
     		  	break;
             }
         }

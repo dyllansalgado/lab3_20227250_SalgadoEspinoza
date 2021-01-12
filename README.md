@@ -10,3 +10,4 @@
 09-01-2021 subiendo mas avances, tengo unos errores en asignar recompensa y en realizar la respuesta.
 10-01-2021 tengo que cambiar unas pequeñas cosas, terminar el informe y el utlimo diagrama
 11-01-2021 Arregle los errores ahora me falta comentar bien y listo. No alcanzo a realizar opcionales.
+11-01-2021 subiendo lo ultimo y esta listo para enviar.
