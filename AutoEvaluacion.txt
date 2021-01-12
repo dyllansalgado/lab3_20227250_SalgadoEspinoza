@@ -95,9 +95,16 @@ Requisitos:- Para esta funcionalidad, en el menú de la aplicación se debe most
 
 PUNTAJE : 1
 
-////////////////////////
-/PREDICADOS OPCIONALES /  
-////////////////////////
+/////////////////////////////
+/Funcionalidades OPCIONALES /  
+/////////////////////////////
+
+8. (Puntaje a eleccion del profesor) CrearEtiqueta: Permite crear etiquetas a usuarios logeados. Las etiquetas podran ser utilizadas por todos los usuarios del stack.
+Si el nombre de etiqueta ya existe, saldra un mensaje diciendo que existe por lo tanto no se añade.
+Requisitos: - Usuario logeado.
+
+PUNTAJE: 1
+
 9. (2 pto) vote: Función que permite a un usuario votar por una pregunta o respuesta. El voto puede ser positivo o negativo, ajustando los puntajes a otorgar según las instrucciones descritas al principio de este enunciado.
 Requisitos: - Las entidades de Pregunta y Respuesta deben poder registrar la cantidad de votos.
     	    - Se debe otorgar el puntaje correspondiente al Autor.
